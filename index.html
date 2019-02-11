@@ -10,7 +10,7 @@
     </aside>
     <main>
         <ul class="gallery">
-            <li>
+            <!-- <li>
                 <a class="gallery-link" href="galleries/gallery1.html"><img src="assets/Amatsu-mina-1.jpg" /></a> 
             </li>
             <li>
@@ -57,8 +57,78 @@
             </li>
             <li>
                 <a class="gallery-link" href="galleries/gallery14.html"><img src="assets/DSC_1966.JPG" /></a> 
-            </li>
+            </li> -->
         </ul>
     </main>
-</body>    
+</body> 
+<script>
+    const galleries = [
+        {
+            name: "AmatsuMina", 
+            url: "?galleryName=AmatsuMina",
+            thumbnail: "assets/Amatsu-mina-1.jpg",
+            photos: [         
+                {
+                    url: "slide.html?photoName=Amatsu-mina-1.jpg", thumbnail: "assets/Amatsu-mina-1.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-2.jpg", thumbnail: "assets/Amatsu-mina-2.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-3.jpg", thumbnail: "assets/Amatsu-mina-3.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-4.jpg", thumbnail: "assets/Amatsu-mina-4.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-5.jpg", thumbnail: "assets/Amatsu-mina-5.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-6.jpg", thumbnail: "assets/Amatsu-mina-6.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-7.jpg", thumbnail: "assets/Amatsu-mina-7.jpg",
+                },
+                {
+                    url: "slide.html?photoName=Amatsu-mina-8.jpg", thumbnail: "assets/Amatsu-mina-8.jpg",
+                },
+            ]
+        }
+    ]
+
+
+    const mainGallery = document.querySelector(".gallery");
+    let galleryItem, galleryLink, photoTag;
+
+    const galleryName = new URLSearchParams(window.location.search).get("galleryName");
+
+    if (galleryName) {
+        //This is if we have a gallery name in the url
+        let photos = galleries.find((gallery) => gallery.name === galleryName).photos
+        photos.forEach((photo) => {
+            galleryItem = document.createElement("li");
+            galleryLink = document.createElement("a");
+            photoTag = document.createElement("img");
+            galleryLink.setAttribute("href", photo.url);
+            photoTag.setAttribute("src", photo.thumbnail);
+            galleryLink.appendChild(photoTag);
+            galleryItem.appendChild(galleryLink);
+            mainGallery.appendChild(galleryItem);
+        })
+    } else {
+        //This is if we have no gallery name in the url
+        galleries.forEach((gallery) => {
+            galleryItem = document.createElement("li");
+            galleryLink = document.createElement("a");
+            photoTag = document.createElement("img");
+            galleryLink.setAttribute("href", gallery.url);
+            photoTag.setAttribute("src", gallery.thumbnail);
+            galleryLink.appendChild(photoTag);
+            galleryItem.appendChild(galleryLink);
+            mainGallery.appendChild(galleryItem);
+        })
+    }
+
+
+</script>   
 </html>

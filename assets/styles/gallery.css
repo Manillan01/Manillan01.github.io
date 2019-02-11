@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: "Righteous", sans-serif;
+}
+aside {
+    width: 25%;
+    height: 100%;
+    background-color: #fff;
+    float: left;
+    text-transform: uppercase;
+    padding: 10px;
+}
+main {
+    width: 75%;
+    height: 100%;
+    float: right;
+}
+.gallery {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.gallery li {
+    width: 25%;
+    float: left;
+}
+
+.gallery li img {
+    max-width: 100%;
+}
+
+.gallery-link {
+    display: block;
+}
+
+.gallery-link:hover {
+    opacity: 0.75;
+}
+
+.slide {
+    max-width: 100%;
+}
+
+.slide img {
+    max-width: 100%;
+}

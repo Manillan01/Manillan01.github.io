@@ -13,29 +13,38 @@ body {
     background-color: #FFF;
     font-family: "Righteous", sans-serif;
 }
-aside {
-    width: 25%;
-    height: 100%;
-    background-color: #fff;
-    float: left;
-    text-transform: uppercase;
-    padding: 10px;
+
+.clearline {
+    width: 100%;
+    clear: both;
 }
-main {
-    width: 75%;
-    height: 100%;
+
+nav {
+    background-color: #E3E3E3;
+    border-bottom: 1px solid #CCC;
+    padding: 15px 30px;
+}
+
+nav .title {
+    float: left;
+    margin: 0;
+}
+
+nav .navbar {
     float: right;
+    margin: 0;
+    list-style-type: none;
+    padding: 5px 10px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
 }
 .gallery {
     margin: 0;
     padding: 5px;
     list-style-type: none;
-}
-
-.gallery li {
-    width: 25%;
-    float: left;
-    padding: 5px;
 }
 
 .gallery li img {
@@ -44,6 +53,7 @@ main {
 
 .gallery-link {
     display: block;
+    line-height: 0;
 }
 
 .gallery-link:hover {
@@ -58,4 +68,29 @@ main {
 .slide img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.gallery li {
+    width: 100%;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+    .gallery li {
+        width: 50%;
+        float: left;
+        padding: 5px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .gallery li {
+        width: 33%;
+        float: left;
+        padding: 5px;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }

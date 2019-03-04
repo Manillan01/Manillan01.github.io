@@ -1,69 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/styles/gallery.css">
 </head>
 <body>
-    <aside>
-        <h1>Gundam Gallery</h1>
-        <ul>
+    <nav>
+        <h1 class="title">Gundam Gallery</h1>
+        <ul class="navbar">
             <li>
                 <a href="index.html">home</a>
             </li>
         </ul>
-    </aside>
+        <div class="clearline"></div>
+    </nav>
     <main>
-        <ul class="gallery">
-            <!-- <li>
-                <a class="gallery-link" href="galleries/gallery1.html"><img src="assets/Amatsu-mina-1.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery2.html"><img src="assets/D1X-Manillion-1.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery3.html"><img src="assets/FA-Unicorn-Bazooka-3.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery4.html"><img src="assets/RX-0-Unicorn-Banshee-2.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery5.html"><img src="assets/schneid-1.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery6.html"><img src="assets/Zaku-I-TB-10.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery7.html"><img src="assets/G-MKII-TITAN-3.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery8.html"><img src="assets/G-00-3.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery9.html"><img src="assets/G-Vidar-1-ps.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery10.html"><img src="assets/astoroth-origin-2.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery11.html"><img src="assets/astoroth-1.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery12.html"><img src="assets/G-overframe-3.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery15.html"><img src="assets/DSC_2034.JPG" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery16.html"><img src="assets/DSC_2040.JPG" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery13.html"><img src="assets/Mock-painted-1.jpg" /></a> 
-            </li>
-            <li>
-                <a class="gallery-link" href="galleries/gallery14.html"><img src="assets/DSC_1966.JPG" /></a> 
-            </li> -->
-        </ul>
+        <ul class="gallery"></ul>
     </main>
 </body> 
 <script>
@@ -468,6 +421,7 @@
             galleryItem = document.createElement("li");
             galleryLink = document.createElement("a");
             photoTag = document.createElement("img");
+            galleryLink.setAttribute("class", "gallery-link");
             galleryLink.setAttribute("href", photo.url);
             photoTag.setAttribute("src", photo.thumbnail);
             galleryLink.appendChild(photoTag);
@@ -480,6 +434,7 @@
             galleryItem = document.createElement("li");
             galleryLink = document.createElement("a");
             photoTag = document.createElement("img");
+            galleryLink.setAttribute("class", "gallery-link");
             galleryLink.setAttribute("href", gallery.url);
             photoTag.setAttribute("src", gallery.thumbnail);
             galleryLink.appendChild(photoTag);
